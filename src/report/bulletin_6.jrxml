@@ -1,0 +1,2207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="aaebf7d8-d4af-468a-a8cb-d9d6f10db8dd">
+	<property name="ireport.zoom" value="1.3636363636363635"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="493"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Matiere Litteraire" uuid="f2dd08fa-958a-4f20-98f0-b50e4b29b1ad">
+		<parameter name="matricule" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="classe" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="annee" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="semestre" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[SELECT 
+*
+FROM evaluation_matiere JOIN matiere ON 
+evaluation_matiere.matiere = matiere.matiere 
+WHERE 
+type = "Littéraire" AND
+matricule =  $P{matricule} AND 
+classe = $P{classe} AND 
+semestre = $P{semestre} AND
+annee = $P{annee} AND 
+coefficient IS NOT NULL
+ORDER BY matiere.priorite ASC]]>
+		</queryString>
+		<field name="annee" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="classe" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="matiere" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="coefficient" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="semestre" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="matricule" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="interro_1" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="interro_2" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="composition" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="devoir_1" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="devoir_2" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="rang" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="appreciation" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="moyenne" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="moyenne_classe" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="note_coefficient" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="type" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="priorite" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="Matiere Scientifique" uuid="62b08c46-f07d-49f3-b469-58c8ee9d3635">
+		<parameter name="matricule" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="classe" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="semestre" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="annee" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[SELECT 
+* 
+FROM evaluation_matiere JOIN matiere ON 
+evaluation_matiere.matiere = matiere.matiere
+WHERE 
+type = "Scientifique" AND
+matricule =  $P{matricule} AND 
+classe = $P{classe} AND
+semestre = $P{semestre} AND
+annee = $P{annee} AND 
+coefficient IS NOT NULL
+ORDER BY matiere.priorite ASC]]>
+		</queryString>
+		<field name="annee" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="classe" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="matiere" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="coefficient" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="semestre" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="matricule" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="interro_1" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="interro_2" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="composition" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="devoir_1" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="devoir_2" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="rang" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="appreciation" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="moyenne" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="moyenne_classe" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="note_coefficient" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="type" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="priorite" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="Matiere Autres" uuid="dc8e7430-d444-4796-abee-c359a0d5348f">
+		<parameter name="matricule" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="classe" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="semestre" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="annee" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[SELECT 
+* 
+FROM evaluation_matiere JOIN matiere ON 
+evaluation_matiere.matiere = matiere.matiere 
+WHERE 
+type = "Autre" AND
+matricule =  $P{matricule} AND
+classe = $P{classe} AND 
+semestre = $P{semestre} AND 
+annee = $P{annee} AND 
+coefficient IS NOT NULL
+ORDER BY matiere.priorite ASC]]>
+		</queryString>
+		<field name="annee" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="classe" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="matiere" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="coefficient" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="semestre" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="matricule" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="interro_1" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="interro_2" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="composition" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="devoir_1" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="devoir_2" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="rang" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="appreciation" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="moyenne" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="moyenne_classe" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="note_coefficient" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="type" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="priorite" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="matricule" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="classe" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="semestre" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="annee" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT 
+evaluation_classe.matricule,
+evaluation_classe.classe,
+evaluation_classe.annee,
+evaluation_classe.semestre,
+nom_prenom,
+sexe,
+rang,
+(SELECT COUNT(matricule) FROM evaluation_classe WHERE classe = $P{classe} 
+AND annee = $P{annee} AND semestre = $P{semestre}) AS effectif,
+
+(SELECT moyenne FROM evaluation_classe WHERE classe = $P{classe} 
+AND annee = $P{annee} AND semestre = 'S1' AND matricule = $P{matricule}) AS moyenne_s1,
+(SELECT moyenne FROM evaluation_classe WHERE classe = $P{classe} 
+AND annee = $P{annee} AND semestre = 'S2' AND matricule = $P{matricule}) AS moyenne_s2,
+ROUND( ((SELECT moyenne FROM evaluation_classe WHERE classe = $P{classe} AND annee = $P{annee} AND semestre = 'S1' AND matricule = $P{matricule})+ ((SELECT moyenne FROM evaluation_classe WHERE classe = $P{classe} AND annee = $P{annee} AND semestre = 'S2' AND matricule = $P{matricule})))/2 ,2) AS moyenne_annuelle,
+
+(SELECT SUM(coefficient) FROM evaluation_matiere JOIN matiere ON evaluation_matiere.matiere = matiere.matiere WHERE matiere.type = "Littéraire" AND evaluation_matiere.classe = $P{classe} AND evaluation_matiere.annee = $P{annee} AND evaluation_matiere.matricule = $P{matricule} AND evaluation_matiere.semestre = $P{semestre}) AS coef_litteraire,
+
+(SELECT SUM(note_coefficient) FROM evaluation_matiere JOIN matiere ON evaluation_matiere.matiere = matiere.matiere WHERE matiere.type = "Littéraire" AND classe = $P{classe} AND annee = $P{annee} AND semestre = $P{semestre} AND matricule = $P{matricule}) AS note_litteraire,
+
+ROUND((
+(SELECT SUM(note_coefficient) FROM evaluation_matiere JOIN matiere ON evaluation_matiere.matiere = matiere.matiere WHERE matiere.type = "Littéraire" AND classe = $P{classe} AND annee = $P{annee} AND semestre = $P{semestre} AND matricule = $P{matricule}) / 
+(SELECT SUM(coefficient) FROM evaluation_matiere JOIN matiere ON evaluation_matiere.matiere = matiere.matiere WHERE matiere.type = "Littéraire" AND matricule = $P{matricule} AND classe = $P{classe} AND annee = $P{annee})),2) AS moyen_litteraire,
+
+(SELECT SUM(coefficient) FROM evaluation_matiere JOIN matiere ON evaluation_matiere.matiere = matiere.matiere WHERE matiere.type = "Scientifique" AND matricule = $P{matricule} AND classe = $P{classe} AND annee = $P{annee}) AS coef_scientifique,
+
+(SELECT SUM(note_coefficient) FROM evaluation_matiere JOIN matiere ON evaluation_matiere.matiere = matiere.matiere WHERE matiere.type = "Scientifique" AND classe = $P{classe} AND annee = $P{annee} AND semestre = $P{semestre} AND matricule = $P{matricule}) AS note_scientifique,
+
+ROUND((
+(SELECT SUM(note_coefficient) FROM evaluation_matiere JOIN matiere ON evaluation_matiere.matiere = matiere.matiere WHERE matiere.type = "Scientifique" AND classe = $P{classe} AND annee = $P{annee} AND semestre = $P{semestre} AND matricule = $P{matricule}) / 
+(SELECT SUM(coefficient) FROM evaluation_matiere JOIN matiere ON evaluation_matiere.matiere = matiere.matiere WHERE matiere.type = "Scientifique" AND matricule = $P{matricule} AND classe = $P{classe} AND annee = $P{annee})),2) AS moyen_scientifique,
+
+(SELECT SUM(coefficient) FROM evaluation_matiere JOIN matiere ON evaluation_matiere.matiere = matiere.matiere WHERE matiere.type = "Autre" AND matricule = $P{matricule} AND classe = $P{classe} AND annee = $P{annee}) AS coef_autre,
+(SELECT SUM(note_coefficient) FROM evaluation_matiere JOIN matiere ON evaluation_matiere.matiere = matiere.matiere WHERE matiere.type = "Autre" AND classe = $P{classe} AND annee = $P{annee} AND semestre = $P{semestre} AND matricule = $P{matricule}) AS note_autre,
+
+ROUND((
+(SELECT SUM(note_coefficient) FROM evaluation_matiere JOIN matiere ON evaluation_matiere.matiere = matiere.matiere WHERE matiere.type = "Autre" AND classe = $P{classe} AND annee = $P{annee} AND semestre = $P{semestre} AND matricule = $P{matricule}) / 
+(SELECT SUM(coefficient) FROM evaluation_matiere JOIN matiere ON evaluation_matiere.matiere = matiere.matiere WHERE matiere.type = "Autre" AND matricule = $P{matricule} AND classe = $P{classe} AND annee = $P{annee})),2) AS moyen_autre,
+
+(SELECT SUM(coefficient) FROM evaluation_matiere JOIN matiere ON evaluation_matiere.matiere = matiere.matiere WHERE classe = $P{classe} AND annee = $P{annee} AND matricule = $P{matricule}) AS coef_total,
+
+(SELECT SUM(note_coefficient) FROM evaluation_matiere JOIN matiere ON evaluation_matiere.matiere = matiere.matiere WHERE classe = $P{classe} AND annee = $P{annee} AND semestre = $P{semestre} AND matricule = $P{matricule}) AS note_total,
+
+moyenne,
+moyenne_lettre,
+
+(SELECT MAX(moyenne) FROM evaluation_classe WHERE classe = $P{classe} AND annee = $P{annee} AND semestre = $P{semestre} ) AS moyenne_max,
+
+(SELECT MIN(moyenne) FROM evaluation_classe WHERE classe = $P{classe} AND annee = $P{annee} AND semestre = $P{semestre} ) AS moyenne_min,
+
+ROUND( ((SELECT MAX(moyenne) FROM evaluation_classe WHERE classe = $P{classe} AND annee = $P{annee} AND semestre = $P{semestre} ) + (SELECT MIN(moyenne) FROM evaluation_classe WHERE classe = $P{classe} AND annee = $P{annee} AND semestre = $P{semestre} )) /2 ,2) AS moyenne_moy,
+qr_code,
+photo,
+
+(case 
+when moyenne between '0' AND '3.99' then '1'
+else ''
+end) AS t_blame,
+
+(case 
+when moyenne between '4' AND '6.99' then '1'
+else ''
+end) AS t_avertis,
+
+(case 
+when moyenne between '7' AND '9.99' then '1'
+else ''
+end) AS t_mauvaise,
+
+(case 
+when moyenne between '10' AND '11.99' then '1'
+else ''
+end) AS t_passable,
+(case 
+when moyenne between '12' AND '13.99' then '1'
+else ''
+end) AS t_assez_bien,
+(case 
+when moyenne between '14' AND '15.99' then '1'
+else ''
+end) AS t_bien,
+(case 
+when moyenne between '16' AND '17.99' then '1'
+else ''
+end) AS t_tres_bien,
+(case 
+when moyenne between '18' AND '20' then '1'
+else ''
+end) AS t_excellent,
+(case 
+when (SELECT moyenne FROM evaluation_matiere WHERE matiere = 'Conduite' AND annee = $P{annee} AND classe =  $P{classe} AND matricule = $P{matricule} AND semestre = $P{semestre}) between '18' AND '20' then '1'
+else ''
+end) AS c_tres_bien,
+(case 
+when (SELECT moyenne FROM evaluation_matiere WHERE matiere = 'Conduite' AND annee = $P{annee} AND classe =  $P{classe} AND matricule = $P{matricule} AND semestre = $P{semestre}) between '16' AND '17' then '1'
+else ''
+end) AS c_bien,
+(case 
+when (SELECT moyenne FROM evaluation_matiere WHERE matiere = 'Conduite' AND annee = $P{annee} AND classe =  $P{classe} AND matricule = $P{matricule} AND semestre = $P{semestre}) between '14' AND '15' then '1'
+else ''
+end) AS c_assez_bien,
+(case 
+when (SELECT moyenne FROM evaluation_matiere WHERE matiere = 'Conduite' AND annee = $P{annee} AND classe =  $P{classe} AND matricule = $P{matricule} AND semestre = $P{semestre}) between '10' AND '13' then '1'
+else ''
+end) AS c_passable,
+(case 
+when (SELECT moyenne FROM evaluation_matiere WHERE matiere = 'Conduite' AND annee = $P{annee} AND classe =  $P{classe} AND matricule = $P{matricule} AND semestre = $P{semestre}) between '8' AND '9' then '1'
+else ''
+end) AS c_mauvaise,
+(case 
+when (SELECT moyenne FROM evaluation_matiere WHERE matiere = 'Conduite' AND annee = $P{annee} AND classe =  $P{classe} AND matricule = $P{matricule} AND semestre = $P{semestre}) between '5' AND '7' then '1'
+else ''
+end) AS c_averstis,
+(case 
+when (SELECT moyenne FROM evaluation_matiere WHERE matiere = 'Conduite' AND annee = $P{annee} AND classe =  $P{classe} AND matricule = $P{matricule} AND semestre = $P{semestre}) between '0' AND '4' then '1'
+else ''
+end) AS c_blame,
+
+(case 
+when moyenne between '16' AND '20' then '1'
+else ''
+end) AS inscrit,
+(case 
+when moyenne between '14' AND '20' then '1'
+else ''
+end) AS felicitation,
+(case 
+when moyenne between '12' AND '13.99' then '1'
+else ''
+end) AS encouragement,
+(case 
+when moyenne between '0' AND '15.99' then '1'
+else ''
+end) AS non_inscrit
+
+FROM evaluation_classe JOIN eleve ON 
+evaluation_classe.matricule = eleve.matricule
+WHERE 
+evaluation_classe.matricule =  $P{matricule} AND 
+evaluation_classe.classe = $P{classe} AND 
+evaluation_classe.semestre = $P{semestre} AND 
+evaluation_classe.annee = $P{annee}]]>
+	</queryString>
+	<field name="matricule" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="classe" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="annee" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="semestre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nom_prenom" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sexe" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="effectif" class="java.lang.Long"/>
+	<field name="moyenne_s1" class="java.math.BigDecimal"/>
+	<field name="moyenne_s2" class="java.math.BigDecimal"/>
+	<field name="moyenne_annuelle" class="java.math.BigDecimal"/>
+	<field name="coef_litteraire" class="java.math.BigDecimal"/>
+	<field name="note_litteraire" class="java.math.BigDecimal"/>
+	<field name="moyen_litteraire" class="java.math.BigDecimal"/>
+	<field name="coef_scientifique" class="java.math.BigDecimal"/>
+	<field name="note_scientifique" class="java.math.BigDecimal"/>
+	<field name="moyen_scientifique" class="java.math.BigDecimal"/>
+	<field name="coef_autre" class="java.math.BigDecimal"/>
+	<field name="note_autre" class="java.math.BigDecimal"/>
+	<field name="moyen_autre" class="java.math.BigDecimal"/>
+	<field name="coef_total" class="java.math.BigDecimal"/>
+	<field name="note_total" class="java.math.BigDecimal"/>
+	<field name="moyenne" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="moyenne_lettre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="moyenne_max" class="java.math.BigDecimal"/>
+	<field name="moyenne_min" class="java.math.BigDecimal"/>
+	<field name="moyenne_moy" class="java.math.BigDecimal"/>
+	<field name="qr_code" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="photo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="t_blame" class="java.lang.String"/>
+	<field name="t_avertis" class="java.lang.String"/>
+	<field name="t_mauvaise" class="java.lang.String"/>
+	<field name="t_passable" class="java.lang.String"/>
+	<field name="t_assez_bien" class="java.lang.String"/>
+	<field name="t_bien" class="java.lang.String"/>
+	<field name="t_tres_bien" class="java.lang.String"/>
+	<field name="t_excellent" class="java.lang.String"/>
+	<field name="c_tres_bien" class="java.lang.String"/>
+	<field name="c_bien" class="java.lang.String"/>
+	<field name="c_assez_bien" class="java.lang.String"/>
+	<field name="c_passable" class="java.lang.String"/>
+	<field name="c_mauvaise" class="java.lang.String"/>
+	<field name="c_averstis" class="java.lang.String"/>
+	<field name="c_blame" class="java.lang.String"/>
+	<field name="inscrit" class="java.lang.String"/>
+	<field name="felicitation" class="java.lang.String"/>
+	<field name="encouragement" class="java.lang.String"/>
+	<field name="non_inscrit" class="java.lang.String"/>
+	<title>
+		<band height="222" splitType="Stretch">
+			<image onErrorType="Icon">
+				<reportElement x="0" y="0" width="74" height="62" uuid="9d497261-14e1-4c29-ab41-914d48e3ccc1"/>
+				<imageExpression><![CDATA["C:\\Geschool\\ressources\\logo\\logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="446" y="40" width="109" height="16" uuid="557d95b5-b848-4d6c-b38c-2bbe9c5ef40e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[_ _ _ _ _]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="82" width="555" height="26" uuid="378f1758-606a-498d-8ac5-8820359981b5"/>
+				<textElement textAlignment="Center">
+					<font size="17" isBold="true"/>
+				</textElement>
+				<text><![CDATA[B U L L E T I N   D E    N O T E S ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="420" y="62" width="135" height="21" uuid="521e21f2-9307-4dfc-95f3-b8877c5c4e37"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semestre} == "S1" ? "Premier Semestre" : "Deuxième Semestre"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="446" y="0" width="109" height="20" uuid="4687f898-d3ae-49b6-b683-265cbfa2f558"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Année Scolaire]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="446" y="20" width="109" height="20" uuid="3b46df4d-6d91-43cd-b0b3-16168b115272"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{annee}.replace( "/", " - " )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="74" y="0" width="304" height="65" uuid="7b625560-a3a9-455c-93fd-d6649453a544"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPUBLIQUE DU NIGER / DRES NIAMEY / DDES NY 1 COMPLEXE SCOLAIRE PRIVE FLOT GERMANT            Tél : (227) 96 26 03 37 Site Web : www.flotgermant.net]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="108" width="555" height="81" uuid="2d376149-46b8-4750-b43d-0930e36e8622"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="329" y="164" width="37" height="20" uuid="24a848c8-a045-4443-a651-82e39bfe7ca8"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Rang :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="138" width="105" height="20" uuid="13c71b26-59b2-48a2-88e5-53341f17ec79"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Classe redoublée :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="366" y="164" width="54" height="20" uuid="8fe4f09b-46a8-4a37-b2e2-130510745f94"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rang}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="76" y="113" width="100" height="20" uuid="a2d4246c-2fe6-49e7-b517-23ef3fb1fec4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nom et Prénoms :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="416" y="138" width="38" height="20" uuid="7a47b792-0432-49f4-98a3-3bc12b59e300"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sexe}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="76" y="137" width="59" height="20" uuid="eb064ef9-02b1-46ea-954e-7b51e1692327"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Matricule :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="325" y="138" width="53" height="20" uuid="ee2d6047-9447-4444-a4d4-ac851bb4551c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["........."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="134" y="138" width="86" height="20" uuid="dffe36d6-aa55-4b82-97ad-16fee6ba4f4a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{matricule}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="123" y="164" width="66" height="20" uuid="8d40594a-d0a6-4cb2-8f3d-16307c354f9b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="252" y="164" width="64" height="20" uuid="a15c841d-2910-426d-8bd5-4af45e847288"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{effectif}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="179" y="113" width="275" height="20" uuid="3ec158b8-9037-41e3-af73-e4e37703e996"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nom_prenom}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="206" y="164" width="46" height="20" uuid="0fa1edbb-c3fb-406a-8d0b-1b121d7e32d8"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Effectif :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="164" width="47" height="20" uuid="6c974c27-2d8f-45c9-8e7d-39c195036430"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Classe :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="381" y="138" width="35" height="20" uuid="3b71c8c2-f33d-45b6-948f-4ecd191c9fb9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Sexe :]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement key="table 1" style="table 1" x="0" y="199" width="555" height="23" uuid="01a05f96-973b-49fb-bfcc-32d34b5e2392"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Matiere Litteraire" uuid="466ce149-2040-4d24-892d-0af207a8c96f">
+						<datasetParameter name="matricule">
+							<datasetParameterExpression><![CDATA[$F{matricule}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="classe">
+							<datasetParameterExpression><![CDATA[$F{classe}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="annee">
+							<datasetParameterExpression><![CDATA[$F{annee}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="semestre">
+							<datasetParameterExpression><![CDATA[$F{semestre}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="841a88b5-3732-447c-a4eb-4e4b5d55275f">
+						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="90" height="30" backcolor="#DFF2FF" uuid="e0d472ec-ffb1-4374-a061-3f9434f5bd28"/>
+								<box>
+									<bottomPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Disciplines]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="607f2ccd-6021-4e26-b3aa-25a5d46d9653"/>
+								<box>
+									<topPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{matiere}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="47" uuid="e2884e09-6252-4ab8-a63a-0c1fc6d461ef">
+						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="47" height="30" backcolor="#DFF2FF" uuid="258a69f1-191c-48e4-bc09-e474e841997d"/>
+								<box>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[M. Cla sur 20]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="47" height="20" uuid="8d217264-a0b9-4837-946e-0175d2dda863"/>
+								<box>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{moyenne_classe}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="42" uuid="68539648-5958-4709-aa51-a35447d434bc">
+						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="42" height="30" backcolor="#DFF2FF" uuid="74c0d83d-66c5-4b02-8539-004328491807"/>
+								<box>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Compo sur 20]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="42" height="20" uuid="6f660c71-1856-443f-8517-09bb4a2f47cd"/>
+								<box>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{composition}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="44" uuid="b3b9724d-01f2-45b5-aec4-693a54bf7a5e">
+						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="44" height="30" backcolor="#DFF2FF" uuid="df91e304-507a-47ab-a9da-7078333ff2c1"/>
+								<box>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Moy. sur 20]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="44" height="20" uuid="3cd2ab3b-831b-4e5a-bcd2-26be27280379"/>
+								<box>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{moyenne}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="42" uuid="ee0ec409-2518-4022-94c8-2f8f3571c187">
+						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="42" height="30" backcolor="#DFF2FF" uuid="70953ee3-5a66-4d66-8013-4e6beddded98"/>
+								<box>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Coef]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="42" height="20" uuid="121537e9-5c99-4e96-8a39-d1f24d09868b"/>
+								<box>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{coefficient}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="42" uuid="c0f99882-361b-4dbc-8ca6-234d0fe31928">
+						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="42" height="30" backcolor="#DFF2FF" uuid="9be8cfe4-6f55-436d-8a9a-20ef1805863d"/>
+								<box>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Notes Coeff.]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="42" height="20" uuid="14caa3c6-143d-4400-8743-804a14bc5006"/>
+								<box>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{note_coefficient}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="42" uuid="8b4d1e21-5793-4199-ba12-f3e882df31a9">
+						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="42" height="30" backcolor="#DFF2FF" uuid="e7e42421-c6cd-4e66-b790-9138e3fb8ebe"/>
+								<box>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Rang]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="42" height="20" uuid="4fde7bbc-7cd2-4b50-bdb7-9c06851b9041"/>
+								<box>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{rang}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="103" uuid="32eb6d05-5616-4d09-9f24-5afce6422deb">
+						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="103" height="30" backcolor="#DFF2FF" uuid="b9defc66-c6ff-45cf-8701-ae7d737b49bb"/>
+								<box>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Apprecia. des Profs]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="103" height="20" uuid="de024b1e-4aac-40f5-8cbf-45f971c64452"/>
+								<box>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{appreciation}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="102" uuid="8b5e8d23-3c00-48e3-ba95-d4725eb767ae">
+						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="102" height="30" backcolor="#DFF2FF" uuid="03ad5e21-876e-4c83-95f8-6cd752b9ac6f"/>
+								<box>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Signatures]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="102" height="20" uuid="54fe4848-6123-4c62-b8bd-9ba0bb7e9a70"/>
+								<box>
+									<topPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+								</box>
+								<text><![CDATA[]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<image scaleImage="FillFrame" onErrorType="Blank">
+				<reportElement x="474" y="117" width="75" height="66" uuid="f1f24fa6-9d3c-4b15-bc59-48886c7c3977"/>
+				<imageExpression><![CDATA[$F{photo}]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame" onErrorType="Blank">
+				<reportElement x="8" y="117" width="59" height="66" uuid="4e110d96-5916-45a8-ab14-57f9f7f72dce"/>
+				<imageExpression><![CDATA[$F{qr_code}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="46" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table 1" style="table 1" x="0" y="21" width="555" height="25" uuid="82301285-e419-405d-81f4-375ffe20eed6"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Matiere Scientifique" uuid="bfe225f9-0ff1-421d-b73e-bc8c6cf94531">
+						<datasetParameter name="matricule">
+							<datasetParameterExpression><![CDATA[$F{matricule}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="classe">
+							<datasetParameterExpression><![CDATA[$F{classe}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="annee">
+							<datasetParameterExpression><![CDATA[$F{annee}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="semestre">
+							<datasetParameterExpression><![CDATA[$F{semestre}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="7d277270-4a97-4664-bee8-0735fc95da5a">
+						<jr:tableHeader style="table 1_TH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="140cb7fc-e06d-464f-8d66-53d1c4e919b6"/>
+								<box>
+									<pen lineWidth="0.0"/>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="0.0"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{matiere}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="47" uuid="a546a280-b94f-41c5-929d-cd7678f6a73c">
+						<jr:tableHeader style="table 1_TH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="47" height="20" uuid="837c4f1c-48b6-4287-92db-6f8514109988"/>
+								<box>
+									<pen lineWidth="1.5"/>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{moyenne_classe}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="42" uuid="47778045-2243-4b2b-bef2-fdc0d6500969">
+						<jr:tableHeader style="table 1_TH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="42" height="20" uuid="aeb901e8-428d-4184-8c0c-e93a27ef7d4d"/>
+								<box>
+									<pen lineWidth="1.5"/>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{composition}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="44" uuid="66474545-9808-4c68-ad40-01aa2749f2fd">
+						<jr:tableHeader style="table 1_TH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="44" height="20" uuid="419a85b3-cc0a-4ac5-a564-70bcb00efbf8"/>
+								<box>
+									<pen lineWidth="1.5"/>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{moyenne}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="42" uuid="10da01c7-b203-4118-a93e-2bea5d5506c7">
+						<jr:tableHeader style="table 1_TH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="42" height="20" uuid="2b1b30ba-7040-4c0d-9868-20205aaaf8b9"/>
+								<box>
+									<pen lineWidth="1.5"/>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{coefficient}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="42" uuid="2aaa4511-6773-468d-8ce7-d8234412219c">
+						<jr:tableHeader style="table 1_TH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="42" height="20" uuid="50f9987b-d662-49a0-b562-f65dcc5b6066"/>
+								<box>
+									<pen lineWidth="1.5"/>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{note_coefficient}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="42" uuid="fe3ead38-0e5d-4762-8bed-926dddb42331">
+						<jr:tableHeader style="table 1_TH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="42" height="20" uuid="578dfedb-cf5d-404c-8880-d5b480999bba"/>
+								<box>
+									<pen lineWidth="1.5"/>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{rang}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="103" uuid="e674c839-e798-42a0-901a-e3f076178f73">
+						<jr:tableHeader style="table 1_TH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="103" height="20" uuid="ac5c7c8f-2546-4fe2-8588-ec1c543e98d5"/>
+								<box>
+									<pen lineWidth="1.5"/>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{appreciation}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="102" uuid="0b5d3123-ce13-43b7-95e7-15085a8f69d7">
+						<jr:tableHeader style="table 1_TH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="102" height="20" uuid="4184f686-8f9a-4059-977a-0ee1dfe1b2e2"/>
+								<box>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+								</box>
+								<text><![CDATA[]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement style="table" x="307" y="0" width="247" height="21" backcolor="#CCCCCC" uuid="29188624-477f-41a7-bf03-1204a4db5c21"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="265" y="0" width="42" height="21" uuid="0ac0e425-f2c6-4706-a8fa-a372f843727d"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textField>
+					<reportElement x="0" y="0" width="42" height="21" uuid="9b3c19e3-2103-4eca-90c7-c8d507f787ab"/>
+					<box>
+						<topPen lineWidth="1.5"/>
+						<leftPen lineWidth="1.5"/>
+						<bottomPen lineWidth="1.5"/>
+						<rightPen lineWidth="1.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{note_litteraire}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement style="table" x="223" y="0" width="42" height="21" backcolor="#CCCCCC" uuid="27501aef-4d1f-44d0-a9aa-1b842b182d5a"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coef_litteraire}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" x="0" y="0" width="223" height="21" uuid="07a6336f-c270-4e69-90bc-eb7d43173c1b"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bilan Matières Littéraires : Moyenne = " +$F{moyen_litteraire}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement style="table" x="0" y="-1" width="223" height="22" uuid="f369afcc-14a8-4cf7-a4e7-54002f5c8d67"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bilan Matières Scientifiques : Moyenne = " + $F{moyen_scientifique}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" x="223" y="-1" width="42" height="22" backcolor="#CCCCCC" uuid="8b35d758-8cec-4379-837b-f56311d18622"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coef_scientifique}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="table" x="307" y="-1" width="247" height="22" backcolor="#CCCCCC" uuid="63cf93c2-0400-4674-9d07-d47c8728ea13"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="265" y="-1" width="42" height="22" uuid="0e5e0992-b2d3-44f2-8ea9-f77a0a3329b2"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textField>
+					<reportElement x="0" y="0" width="42" height="22" uuid="2a394781-6ffd-4431-b603-f9d3ae9303cb"/>
+					<box>
+						<topPen lineWidth="1.5"/>
+						<leftPen lineWidth="1.5"/>
+						<bottomPen lineWidth="1.5"/>
+						<rightPen lineWidth="1.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{note_scientifique}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<componentElement>
+				<reportElement key="table 1" style="table 1" x="0" y="20" width="555" height="20" uuid="812db9d0-3f37-411d-ac62-810afb67b3e4"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Matiere Autres" uuid="2bbf996a-c5c7-4a72-a63c-52457d73ebcc">
+						<datasetParameter name="matricule">
+							<datasetParameterExpression><![CDATA[$F{matricule}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="classe">
+							<datasetParameterExpression><![CDATA[$F{classe}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="annee">
+							<datasetParameterExpression><![CDATA[$F{annee}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="semestre">
+							<datasetParameterExpression><![CDATA[$F{semestre}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="e00314d0-7a6e-40ca-93c1-c28532981544">
+						<jr:tableHeader style="table 1_TH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="e6217ec2-6754-4895-b41b-50d2f6556815"/>
+								<box>
+									<topPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{matiere}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="47" uuid="cee32448-93c5-482d-aa49-4e69a70c9a51">
+						<jr:tableHeader style="table 1_TH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="47" height="20" uuid="d256d7bd-3f17-4671-8627-dc7144f87c80"/>
+								<box>
+									<pen lineWidth="1.5"/>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{moyenne_classe}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="42" uuid="ca4e3d5c-cf78-4988-a9ae-235b9e824e44">
+						<jr:tableHeader style="table 1_TH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="42" height="20" uuid="94a25cf3-40e2-4728-92e8-aded7f8cf9d0"/>
+								<box>
+									<pen lineWidth="1.5"/>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{composition} == null ? "" : $F{composition}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="44" uuid="510bf58f-04a9-4810-af54-ebad2c55aa3a">
+						<jr:tableHeader style="table 1_TH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="44" height="20" uuid="77f66242-34b0-4009-a581-5b78a81d3eb6"/>
+								<box>
+									<pen lineWidth="1.5"/>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{moyenne}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="42" uuid="6d4a0bf5-933d-4edf-b821-9abb9da4c9a5">
+						<jr:tableHeader style="table 1_TH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="42" height="20" uuid="182278fb-49c1-456d-b12d-5893708042ea"/>
+								<box>
+									<pen lineWidth="1.5"/>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{coefficient}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="42" uuid="cad05653-ac1c-46ed-9563-36a0696242be">
+						<jr:tableHeader style="table 1_TH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="42" height="20" uuid="1c98845f-571b-40f6-a7d2-e2b4a6b13192"/>
+								<box>
+									<pen lineWidth="1.5"/>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{note_coefficient}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="42" uuid="a40ab7cd-1235-4bfe-9727-557230fc311f">
+						<jr:tableHeader style="table 1_TH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="42" height="20" uuid="9c70a85a-264f-4ff4-afac-f9b70aff1389"/>
+								<box>
+									<pen lineWidth="1.5"/>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{rang}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="103" uuid="066897b5-b259-4c15-a96d-3557aeb0f7c8">
+						<jr:tableHeader style="table 1_TH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="103" height="20" uuid="4686a7ef-15c0-4644-a6c9-a22218616061"/>
+								<box>
+									<pen lineWidth="1.5"/>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+									<rightPen lineWidth="1.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{appreciation}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="102" uuid="96494ce2-ff68-46df-9afd-0753ede18f9f">
+						<jr:tableHeader style="table 1_TH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="102" height="20" uuid="9b95e6d0-828e-4d6f-9a84-1d90fa3bf3f0"/>
+								<box>
+									<topPen lineWidth="1.5"/>
+									<leftPen lineWidth="1.5"/>
+									<bottomPen lineWidth="1.5"/>
+								</box>
+								<text><![CDATA[]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</columnHeader>
+	<columnFooter>
+		<band height="290" splitType="Stretch">
+			<staticText>
+				<reportElement x="381" y="58" width="173" height="15" uuid="b96c58b2-6e6c-434e-a1a7-d74da5eb027b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Moy. de classe + Note de composition]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="381" y="74" width="173" height="15" uuid="3943997f-69b8-4797-9cb1-a9c3c0991396"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="124" y="206" width="30" height="11" uuid="41b6e132-d786-4f07-9504-f49999873040"/>
+				<imageExpression><![CDATA[$F{t_bien} ? "C:\\Geschool\\ressources\\logo\\blue_check.png" : ""]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="229" y="236" width="30" height="11" uuid="f24e38dc-c3f7-4a9a-8e5b-5982e3e4f34b"/>
+				<imageExpression><![CDATA[$F{encouragement} ? "C:\\Geschool\\ressources\\logo\\blue_check.png" : ""]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="47" y="234" width="30" height="11" uuid="5c521c46-2755-43a6-ab1d-7dfacc0f71a1"/>
+				<imageExpression><![CDATA[$F{c_mauvaise} ? "C:\\Geschool\\ressources\\logo\\blue_check.png" : ""]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="124" y="271" width="30" height="11" uuid="51bca8d3-81b7-47e8-ad35-97f4d7522021"/>
+				<imageExpression><![CDATA[$F{t_blame} ? "C:\\Geschool\\ressources\\logo\\blue_check.png" : ""]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="47" y="182" width="30" height="11" uuid="800d943d-5624-4b55-a1d7-f248d822c446"/>
+				<imageExpression><![CDATA[$F{c_tres_bien} ? "C:\\Geschool\\ressources\\logo\\blue_check.png" : ""]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="124" y="183" width="30" height="11" uuid="ea20d5df-6614-410b-847e-21843273a4fd"/>
+				<imageExpression><![CDATA[$F{t_excellent} ? "C:\\Geschool\\ressources\\logo\\blue_check.png" : ""]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="47" y="195" width="30" height="11" uuid="82af76c5-fa49-4a31-bfaf-036eb66df63d"/>
+				<imageExpression><![CDATA[$F{c_bien} ? "C:\\Geschool\\ressources\\logo\\blue_check.png" : ""]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="124" y="245" width="30" height="11" uuid="7b12626f-c9b8-48f4-84db-e5e1877ed1ca"/>
+				<imageExpression><![CDATA[$F{t_mauvaise} ? "C:\\Geschool\\ressources\\logo\\blue_check.png" : ""]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="47" y="247" width="30" height="11" uuid="a37104d1-8cb8-45f1-8a3f-8cf996ea8146"/>
+				<imageExpression><![CDATA[$F{c_averstis} ? "C:\\Geschool\\ressources\\logo\\blue_check.png" : ""]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="124" y="193" width="30" height="11" uuid="04352a2c-ebe3-4b0d-9184-975589a53956"/>
+				<imageExpression><![CDATA[$F{t_tres_bien} ? "C:\\Geschool\\ressources\\logo\\blue_check.png" : ""]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="47" y="221" width="30" height="11" uuid="c61bacb8-f726-4d20-a73c-8aab418c2d19"/>
+				<imageExpression><![CDATA[$F{c_passable} ? "C:\\Geschool\\ressources\\logo\\blue_check.png" : ""]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="124" y="258" width="30" height="11" uuid="84e688c8-6087-4210-aca9-8545be102f8b"/>
+				<imageExpression><![CDATA[$F{t_avertis} ? "C:\\Geschool\\ressources\\logo\\blue_check.png" : ""]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="229" y="186" width="30" height="11" uuid="f900cf5a-9f7c-421d-ba3a-142be2a65a76"/>
+				<imageExpression><![CDATA[$F{inscrit} ? "C:\\Geschool\\ressources\\logo\\blue_check.png" : ""]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="47" y="260" width="30" height="11" uuid="33f0e7b8-65a6-4b51-b4a1-5a7d4e6fc908"/>
+				<imageExpression><![CDATA[$F{c_blame} ? "C:\\Geschool\\ressources\\logo\\blue_check.png" : ""]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="124" y="219" width="30" height="11" uuid="9e92c3be-2b18-4071-8470-6c599846f5e6"/>
+				<imageExpression><![CDATA[$F{t_assez_bien} ? "C:\\Geschool\\ressources\\logo\\blue_check.png" : ""]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="229" y="210" width="30" height="11" uuid="36f221ac-133f-4b6b-92f0-d5d80f13a37e"/>
+				<imageExpression><![CDATA[$F{felicitation} ? "C:\\Geschool\\ressources\\logo\\blue_check.png" : ""]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="47" y="208" width="30" height="11" uuid="bc8b313f-784c-4e31-942e-c2c965a2f5c1"/>
+				<imageExpression><![CDATA[$F{c_assez_bien} ? "C:\\Geschool\\ressources\\logo\\blue_check.png" : ""]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="381" y="246" width="30" height="11" uuid="55c4ab3d-1a0f-44c9-aa2d-49228ab6c896"/>
+				<imageExpression><![CDATA["C:\\Geschool\\ressources\\logo\\blue_check.png"]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="124" y="232" width="30" height="11" uuid="fdcaf99c-f92e-475e-9441-ffff2925628a"/>
+				<imageExpression><![CDATA[$F{t_passable} ? "C:\\Geschool\\ressources\\logo\\blue_check.png" : ""]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="229" y="258" width="30" height="11" uuid="015ee230-022d-4621-b527-5d391a15d723"/>
+				<imageExpression><![CDATA[$F{non_inscrit} ? "C:\\Geschool\\ressources\\logo\\blue_check.png" : ""]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="table" x="0" y="179" width="76" height="105" uuid="7f3fd188-1eab-4f7f-9986-9b6d01433d52"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="246" width="50" height="13" uuid="92fb03a0-6f01-4405-84d8-50017138fdcd"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Avertis.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="76" y="179" width="76" height="105" uuid="cf268f6d-9f41-4f8a-a2db-eef5612e84f4"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="265" y="179" width="152" height="105" uuid="5d239334-03fe-4a07-a3f0-e528fe48f202"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="152" y="179" width="113" height="105" uuid="b7aaad57-f972-4c69-ab89-31fbf0aad234"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="0" y="91" width="265" height="20" backcolor="#DFF2FF" uuid="1d89905e-6942-42b4-b0d5-334547e353ac"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rappel des moyennes obtenues]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="table" x="223" y="0" width="42" height="20" backcolor="#CCCCCC" uuid="52a63ada-7c46-4f32-930d-ee70317ccec2"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coef_autre}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="265" y="0" width="42" height="20" uuid="7a11a40d-69b7-4d75-ab85-6310f883c2ef"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textField>
+					<reportElement x="0" y="1" width="42" height="19" uuid="717b41c9-d015-4aea-9c8e-6314b918412b"/>
+					<box>
+						<topPen lineWidth="1.5"/>
+						<leftPen lineWidth="1.5"/>
+						<bottomPen lineWidth="1.5"/>
+						<rightPen lineWidth="1.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{note_autre}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<staticText>
+				<reportElement style="table" x="307" y="0" width="247" height="20" backcolor="#CCCCCC" uuid="5ad2d209-1c39-4d50-936e-db18b69711d8"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="table" x="0" y="0" width="223" height="20" uuid="570cc3d0-70f6-4b70-b5e3-dceb3679c638"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Bilan Autres Matières : Moyenne = " + $F{moyen_autre}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="265" y="20" width="42" height="20" uuid="851a2c03-87b6-40c4-9f57-2bccd83cacb0"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+			</frame>
+			<textField>
+				<reportElement style="table" x="223" y="20" width="42" height="20" backcolor="#CCCCCC" uuid="f89a4085-038d-4bb2-855e-d8d0691131fa"/>
+				<box>
+					<pen lineWidth="1.5"/>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coef_total}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="181" y="20" width="42" height="20" uuid="17446932-82e5-4733-9a98-17c95b866b98"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="42" height="20" uuid="b14a0614-6359-47b0-902c-c3ba9d071573"/>
+					<box>
+						<topPen lineWidth="1.5"/>
+						<leftPen lineWidth="1.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="265" y="91" width="289" height="20" backcolor="#DFF2FF" uuid="ccd7cc61-0507-44d2-ac66-34aef59e75bd"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Moyennes de classes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="0" y="111" width="76" height="20" backcolor="#CCCCCC" uuid="89c593ed-fae2-4d29-a500-13a4615ac2d2"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[1er Semestre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="76" y="111" width="76" height="20" backcolor="#CCCCCC" uuid="cced81c0-9e38-4140-8f1b-ad6589edbb6f"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[2eme Semestre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="152" y="111" width="113" height="20" backcolor="#CCCCCC" uuid="b3fa87dc-31fe-43dd-98bb-b29d625628cb"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Moyenne Annuelle]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="table" x="152" y="131" width="113" height="20" backcolor="#CCCCCC" uuid="01ad094a-c6b0-4afa-9f89-feda0f1b00f5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semestre} == "S1" ? "" : $F{moyenne_annuelle}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" x="0" y="131" width="76" height="20" backcolor="#CCCCCC" uuid="0126aeb1-cf56-4071-8225-d6f1e7a86396"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{moyenne_s1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" x="76" y="131" width="76" height="20" backcolor="#CCCCCC" uuid="7cd297b4-a210-4908-b35d-7a947b817945"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semestre} == "S1" ? "" : $F{moyenne_s2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" x="417" y="131" width="137" height="20" backcolor="#CCCCCC" uuid="5b57b84c-71bb-4b3d-b827-afb39730bc13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{moyenne_moy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" x="341" y="131" width="76" height="20" backcolor="#CCCCCC" uuid="f7bf4493-c1ef-4d53-9427-f1fa8642d799"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{moyenne_max}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="table" x="417" y="111" width="137" height="20" backcolor="#CCCCCC" uuid="4aca29a7-c2ae-47d6-a27d-119f8a75bb98"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Moyenne classe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="265" y="111" width="76" height="20" backcolor="#CCCCCC" uuid="09831942-c1e7-4fe6-ac5f-3a1ad77201be"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Moyenne Min]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="341" y="111" width="76" height="20" backcolor="#CCCCCC" uuid="75bc66c9-4c75-43ba-9bbd-c32032c67de5"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Moyenne Max]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="table" x="265" y="131" width="76" height="20" backcolor="#CCCCCC" uuid="574b156f-772b-46fc-aeb3-f2d617857cba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{moyenne_min}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="233" width="50" height="13" uuid="9211442e-9698-4227-80e4-99d0a2b3a1e7"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Mauvaise]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="238" y="210" width="10" height="11" uuid="3c080433-b47d-4f8c-9cb3-d6b51d5dd9be"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="238" y="236" width="10" height="11" uuid="02b3ae78-e7c8-4d7a-ae63-930b9ed58711"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="265" y="160" width="152" height="19" backcolor="#DFF2FF" uuid="bef91b03-56d9-4b5e-97d4-00e5268027ff"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Assiduité/Retard]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="57" y="182" width="10" height="11" uuid="bf37dd54-84a5-4e87-825c-bf8a7b35d634"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="57" y="247" width="10" height="11" uuid="de6171c0-6f14-4265-a7d4-ecb8512ea1e6"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="181" width="50" height="13" uuid="0053a7c1-fbe1-485d-b71f-ac766b6f2adc"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Trés Bien ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="57" y="234" width="10" height="11" uuid="9f774d25-ffc9-47eb-a02c-7dcfbffea1c2"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="235" width="72" height="13" uuid="61ece245-e71f-463d-ad53-91dacc237f49"/>
+				<text><![CDATA[Encourgements]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="0" y="160" width="76" height="19" backcolor="#DFF2FF" uuid="45fbfb40-92aa-425b-9e1b-4e87f6828bff">
+					<property name="net.sf.jasperreports.export.pdf.tag.table" value="start"/>
+					<property name="net.sf.jasperreports.export.pdf.tag.th" value="start"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Conduite]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="57" y="195" width="10" height="11" uuid="a1473830-a7f5-4141-ac9c-dac39bd5c23b"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="417" y="179" width="138" height="105" uuid="0e9fb0dd-b312-4521-9482-6168b183ab65"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="57" y="260" width="10" height="11" uuid="dab83ae0-8462-45b6-a189-4a65b1149cec"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="210" width="72" height="13" uuid="b107c1ab-ba65-478a-bd4f-9d58f8bdc618"/>
+				<text><![CDATA[Félicitations ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="76" y="160" width="76" height="19" backcolor="#DFF2FF" uuid="e72ab3b0-64e6-4e96-a758-52cd16bcc12f">
+					<property name="net.sf.jasperreports.export.pdf.tag.th" value="start"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Travail]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="256" width="72" height="13" uuid="02f65bc8-edb2-44b0-bd0c-040494fa1c56"/>
+				<text><![CDATA[Non Inscrit(e)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="152" y="160" width="113" height="19" backcolor="#DFF2FF" uuid="a2b3423d-1959-45f2-9b8a-4bb64899c325"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tableau d'Honneur]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="220" width="50" height="13" uuid="cb9582f4-04f8-476a-b0e4-145c51b24a1f"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Passable]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="238" y="186" width="10" height="11" backcolor="#FFFFFF" uuid="f57f6088-d5b3-492e-89b5-64440552467a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="184" width="72" height="13" uuid="7dc98f00-8f89-4941-87f5-54002980ce4c"/>
+				<text><![CDATA[Inscrit(e)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="258" width="50" height="13" uuid="425b3a2a-1f5c-403e-b41a-a108643f8fcb"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Blame]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="57" y="221" width="10" height="11" uuid="a7dbec3e-1d35-4ea9-8f16-3b6d49c3add3"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="194" width="50" height="13" uuid="fe6bf770-9a7b-4bc3-9ff0-00df5fc8a5b7"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Bien ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="238" y="258" width="10" height="11" uuid="ec9cc102-0b79-47c8-8f00-666bf11e324b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="417" y="160" width="138" height="19" backcolor="#DFF2FF" uuid="39a43a0e-f3cd-46e3-b589-13b672bedb0e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Appréciation du Proviseur]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="319" y="63" width="62" height="19" uuid="da914e5c-9cfd-4bf3-8403-f53f8c5db321"/>
+				<textElement verticalAlignment="Middle">
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[* Moyenne =]]></text>
+			</staticText>
+			<line>
+				<reportElement x="384" y="73" width="170" height="1" uuid="226c0823-e8db-4809-8ca3-ce09c02870d6"/>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="0" y="63" width="319" height="19" uuid="0bdab4ae-0125-45a5-95ff-3108fc50231a"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Moyenne en lettres : " + $F{moyenne_lettre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="265" y="20" width="42" height="19" uuid="6403e315-d9c2-4ea5-a140-edc0712bf48f"/>
+				<box>
+					<pen lineWidth="1.5"/>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{note_total}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="223" y="40" width="84" height="21" uuid="34f93ed9-2a82-448a-a459-f551162d5df0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textField>
+					<reportElement mode="Opaque" x="0" y="0" width="84" height="21" backcolor="#DFF2FF" uuid="80b60cf6-d266-4378-9a67-c23b7f277ba4"/>
+					<box>
+						<pen lineWidth="1.5"/>
+						<topPen lineWidth="1.5"/>
+						<leftPen lineWidth="1.5"/>
+						<bottomPen lineWidth="1.5"/>
+						<rightPen lineWidth="1.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{moyenne}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<staticText>
+				<reportElement x="95" y="40" width="128" height="21" uuid="81c71dbf-bcc6-4bee-8507-53b4d46e5372"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[MOYENNE GENERALE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="352" y="39" width="102" height="19" uuid="99dce67c-425e-456a-8d30-e42a04fbb32e"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Rang : " + $F{rang} + " /" + $F{effectif}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="table" x="57" y="208" width="10" height="11" uuid="10f96b4f-e775-4a55-8e11-aed790b89cc9"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="207" width="50" height="13" uuid="79015a9e-6da8-4ab8-b64c-d532a1d3f0a0"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Bien ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="82" y="244" width="50" height="13" uuid="e5b5b43c-ac67-4dbf-80b8-e406349437fb"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Mauvaise]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="134" y="271" width="10" height="11" uuid="4c381b24-561e-4581-836a-a20d8f5e7026"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="134" y="232" width="10" height="11" uuid="791087b6-63f2-441b-b7b3-aef9f088884d"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="134" y="206" width="10" height="11" uuid="e1067318-efc3-46f0-acc7-3ed8e135d38e"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="134" y="219" width="10" height="11" uuid="f228dedb-252e-425e-829d-293376ef6a90"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="82" y="218" width="50" height="13" uuid="f57136b0-740d-4ba0-9930-6ed0aa95ebcd"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Bien ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="134" y="258" width="10" height="11" uuid="e0dc4bc1-8b77-4b9f-841a-72917945c4a5"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="82" y="231" width="50" height="13" uuid="332ea20d-7ff7-4b64-ae65-750aed483f9f"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Passable]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="134" y="245" width="10" height="11" uuid="bd8f2a6e-e0c0-4c6b-bf09-f4b556643c4d"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="82" y="192" width="50" height="13" uuid="a2b35284-b476-4f04-9838-c614c1143a0d"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Trés Bien ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="82" y="205" width="50" height="13" uuid="374c2c69-f9bd-4157-847a-22b25439f5ff"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Bien ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="82" y="269" width="50" height="13" uuid="7e9759a8-1d73-4ee4-9858-353d9cd0b86d"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Blame]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="134" y="193" width="10" height="11" uuid="6427855c-2075-48b2-8696-9bb0dba76574"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="82" y="257" width="50" height="13" uuid="b7ffa89d-e064-4fc2-9aaa-7deb64b8d4b0"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Avertis.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="134" y="183" width="10" height="11" uuid="1842b3b6-59c6-4aba-abdd-c5f69887ef2c"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="82" y="182" width="50" height="13" uuid="585b098e-7a2f-4f70-b9f1-38fea70fd64f"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Excellent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="271" y="246" width="118" height="13" uuid="8c5fd07f-23f1-4e53-967f-f9f348ad3d5a"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[R A S]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="271" y="225" width="118" height="13" uuid="ae135ef3-1715-405b-8919-179f62d94d1e"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Expulsion(s)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="271" y="185" width="118" height="13" uuid="9628bd9b-f479-483d-b2e8-71378b89ff27"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[ Absence(s) non justifiée(s)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="271" y="204" width="118" height="13" uuid="227cd554-dd30-42c6-afdc-26ccfc538b68"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[ Retard(s) non motivé(s)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="391" y="186" width="10" height="11" backcolor="#FFFFFF" uuid="02589670-cd85-480a-be54-d028561980d4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="391" y="205" width="10" height="11" uuid="5904330c-0af4-4ef4-b548-46136bace842"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="391" y="226" width="10" height="11" uuid="24573ee7-83f1-4e5c-a048-d1b5a3d06d5b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="391" y="246" width="10" height="11" uuid="4bdeeb48-2b38-4166-b7e8-66434685713a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="554" height="20" uuid="6bdee257-2f2b-43c2-993d-abcfa1df2686"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[NOTA BENE : IL N'EST DELIVRE QU'UN SEUL BULLETIN]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
